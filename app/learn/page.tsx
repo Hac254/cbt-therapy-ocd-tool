@@ -72,7 +72,7 @@ export default function LearnPage() {
                           <h2 className="text-2xl font-bold text-primary">{item.title}</h2>
                           <p className="text-muted-foreground">{item.description}</p>
                           <ContentViewer
-                            type={item.type}
+                            type={item.type as "article" | "video"}
                             content={item.content}
                             onComplete={() => handleComplete(item.id)}
                             initialProgress={progress[item.id] || 0}

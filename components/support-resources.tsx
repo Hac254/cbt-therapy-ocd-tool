@@ -49,6 +49,48 @@ const resources = [
 ]
 
 export function SupportResources() {
+  const selfHelpBooks = [
+    {
+      title: "Brain Lock",
+      author: "Jeffrey M. Schwartz",
+      link: "https://www.amazon.com/Brain-Lock-Yourself-Obsessive-Compulsive-Behavior/dp/0060987111"
+    },
+    {
+      title: "The Mindfulness Workbook for OCD",
+      author: "Jon Hershfield MFT",
+      link: "https://www.amazon.com/Mindfulness-Workbook-OCD-Overcoming-Compulsions/dp/1684035635"
+    },
+    // Add more books with links
+  ]
+
+  const supportGroups = [
+    {
+      name: "International OCD Foundation",
+      description: "Find local support groups",
+      link: "https://iocdf.org/support-groups/"
+    },
+    {
+      name: "OCD Action Support Groups",
+      description: "Online and in-person support groups",
+      link: "https://www.ocdaction.org.uk/support-groups"
+    },
+    // Add more support groups with links
+  ]
+
+  const wellnessActivities = [
+    {
+      name: "Headspace Meditation",
+      description: "Guided meditation app",
+      link: "https://www.headspace.com/"
+    },
+    {
+      name: "Yoga for Mental Health",
+      description: "Free yoga resources",
+      link: "https://www.yogajournal.com/practice/yoga-for-anxiety/"
+    },
+    // Add more activities with links
+  ]
+
   return (
     <Tabs defaultValue="professionals" className="space-y-6">
       <TabsList className="grid w-full grid-cols-2">
@@ -98,27 +140,74 @@ export function SupportResources() {
       </TabsContent>
 
       <TabsContent value="resources" className="space-y-6">
-        {resources.map((resource) => (
-          <Card key={resource.title}>
-            <CardHeader>
-              <div className="flex items-center gap-2">
-                <resource.icon className="w-5 h-5" />
-                <CardTitle>{resource.title}</CardTitle>
-              </div>
-              <CardDescription>Available resources and support options</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2">
-                {resource.items.map((item) => (
-                  <li key={item} className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-primary" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-        ))}
+        <Card>
+          <CardHeader>
+            <CardTitle>Self-Help Books</CardTitle>
+            <CardDescription>Recommended reading for OCD management</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              {selfHelpBooks.map((book) => (
+                <a 
+                  key={book.title} 
+                  href={book.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-4 rounded-lg hover:bg-secondary/10 transition-colors"
+                >
+                  <div className="font-medium">{book.title}</div>
+                  <div className="text-sm text-muted-foreground">by {book.author}</div>
+                </a>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Support Groups</CardTitle>
+            <CardDescription>Connect with others in the OCD community</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              {supportGroups.map((group) => (
+                <a
+                  key={group.name}
+                  href={group.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-4 rounded-lg hover:bg-secondary/10 transition-colors"
+                >
+                  <div className="font-medium">{group.name}</div>
+                  <div className="text-sm text-muted-foreground">{group.description}</div>
+                </a>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Wellness Activities</CardTitle>
+            <CardDescription>Complementary practices for mental health</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              {wellnessActivities.map((activity) => (
+                <a
+                  key={activity.name}
+                  href={activity.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-4 rounded-lg hover:bg-secondary/10 transition-colors"
+                >
+                  <div className="font-medium">{activity.name}</div>
+                  <div className="text-sm text-muted-foreground">{activity.description}</div>
+                </a>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
       </TabsContent>
     </Tabs>
   )
