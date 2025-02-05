@@ -5,12 +5,12 @@ import { Phone, Mail, Video, BookOpen, Users, Heart } from "lucide-react"
 
 const professionals = [
   {
-    name: "Dr. Sarah Johnson",
+    name: "Dr. Josh Read",
     title: "OCD Specialist",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "https://i.ibb.co/qFWWVbP/avatar-1.png",
     availability: "Mon-Fri, 9am-5pm",
     contact: {
-      email: "sarah.johnson@example.com",
+      email: "josreadcbt@gmail.com",
       phone: "+1 (555) 123-4567",
     },
   },

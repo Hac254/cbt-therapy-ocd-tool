@@ -12,7 +12,7 @@ import { ChevronDown, ChevronUp, Plus } from "lucide-react"
 
 export function DoubtSequenceTracker() {
   const [sequences, setSequences] = useState<DoubtSequence[]>([])
-  const [trigger, setTrigger] = useState({ description: "", type: "external" as const })
+  const [trigger, setTrigger] = useState<{ description: string; type: "external" | "internal" }>({ description: "", type: "external" })
   const [doubt, setDoubt] = useState("")
   const [consequences, setConsequences] = useState("")
   const [anxietyLevel, setAnxietyLevel] = useState(5)
